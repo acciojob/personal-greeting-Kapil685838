@@ -19,7 +19,7 @@ const App = () => {
           <br />
           <input id="name" type="text" onInput={greeting} />
         </form>
-        <div id="greeting"></div>
+        <p id="greeting"></p>
     </div>
   )
 }
