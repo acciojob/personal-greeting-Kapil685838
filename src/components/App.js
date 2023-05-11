@@ -1,25 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import './../styles/App.css';
 
 const App = () => {
-  function greeting(event) {
-    event.preventDefault();
-    let greet = event.target.value;
-    if(greet != "") {
-      document.getElementById('greeting').innerHTML = `Hello ${greet}!`;
-    } else {
-      document.getElementById('greeting').innerHTML = "";
-    }
-  }
+  let [name, setName] = useState("");
   return (
     <div>
         {/* Do not remove the main div */}
         <form>
           <label for="name">Enter your name:</label>
           <br />
-          <input id="name" type="text" onInput={greeting} />
+          <input id="name" type="text" onChange={(e) => {setName(e.target.value)}} />
         </form>
-        <p id="greeting"></p>
+        {name && <p>Hello {name}!</p>}
     </div>
   )
 }
