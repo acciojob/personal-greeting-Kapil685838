@@ -11,10 +11,9 @@ const App = () => {
           <br />
           <input id="name" type="text" onChange={(e) => {setName(e.target.value)}} />
         </form>
-        {/* {name ? <p>Hello {name}!</p> : <p></p>} */}
         <p>{name ? `Hello ${name}!` : ""}</p>
     </div>
   )
 }
 
-export default App
+export default App;
